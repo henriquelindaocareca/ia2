@@ -93,4 +93,18 @@ function aleatorio(lista){
     return lista[posicao];
 }
 
-mostraPergunta();
+function jogaNovamente() {
+    atual = 0;
+    historiaFinal = "";
+    caixaResultado.classList.remove("mostrar");
+    mostraPergunta();
+}
+
+function substituiNome() {
+    for (const pergunta of perguntas) {
+        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
+    }
+}
+
+substituiNome();
+
